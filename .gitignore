@@ -1,0 +1,9 @@
+*.img
+*.raw
+*.hdr
+*.mhd
+GateMaterials.db
+output/
+check.py
+__pycache__/
+*.pyc

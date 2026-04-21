@@ -1,0 +1,7 @@
+6
+0	0	Air	false	0.0	0.0	0.0	0.2
+1	20	Water	true	0.0	0.0	0.0	0.2
+21  49  Muscle  true    0.5 1.0 0.0 0.5 
+50	100	RibBone	true	0.0	1.0	0.0	0.2
+101 139 Blood   true    1.0 0.0 0.0 0.5
+140	141	Water	true	0.0	0.0	1.0	0.2
