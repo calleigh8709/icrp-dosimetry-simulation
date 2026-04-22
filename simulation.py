@@ -33,8 +33,8 @@ world.material = "Air"
 patient = sim.add_volume("Image", "patient")
 patient.image = str(sim_dir / "AF_P.hdr")
 patient.material = "Air"
-patient.translation = [0, 0, -500*mm]
-patient.rotation = Rotation.from_euler("y", 180, degrees=True).as_matrix()
+patient.translation = [-765*mm, 0, 0]
+patient.rotation = Rotation.from_euler("y", 0, degrees=True).as_matrix()
 patient.voxel_materials = [
     [0,   0,   "Air"],
     [1,   20,  "Water"],
@@ -48,8 +48,8 @@ patient.voxel_materials = [
 comforter = sim.add_volume("Image", "comforter")
 comforter.image = str(sim_dir / "AF_C.hdr")
 comforter.material = "Air"
-comforter.translation = [0, 0, 500*mm]
-comforter.rotation = Rotation.from_euler("x", -90, degrees=True).as_matrix()
+comforter.translation = [765*mm, 0, 0]
+comforter.rotation = Rotation.from_euler("y", 180, degrees=True).as_matrix()
 comforter.voxel_materials = [
     [0,   0,   "Air"],
     [1,   20,  "Water"],
@@ -84,7 +84,7 @@ stat = sim.add_actor("SimulationStatisticsActor", "stat")
 stat.output_filename = str(output_dir / "stat.txt")
 
 dose = sim.add_actor("DoseActor", "doseDistActor")
-dose.attached_to = "patient"
+dose.attached_to = "comforter"
 dose.output_filename = str(output_dir / "doseoutput.mhd")
 dose.hit_type = "random"
 dose.size = [299, 137, 348]
