@@ -33,7 +33,7 @@ world.material = "Air"
 patient = sim.add_volume("Image", "patient")
 patient.image = str(sim_dir / "AF_P.hdr")
 patient.material = "Air"
-patient.translation = [-765*mm, 0, 0]
+patient.translation = [0, -765*mm, 0]
 patient.rotation = Rotation.from_euler("y", 0, degrees=True).as_matrix()
 patient.voxel_materials = [
     [0,   0,   "Air"],
@@ -48,7 +48,7 @@ patient.voxel_materials = [
 comforter = sim.add_volume("Image", "comforter")
 comforter.image = str(sim_dir / "AF_C.hdr")
 comforter.material = "Air"
-comforter.translation = [765*mm, 0, 0]
+comforter.translation = [0, 765*mm, 0]
 comforter.rotation = Rotation.from_euler("y", 180, degrees=True).as_matrix()
 comforter.voxel_materials = [
     [0,   0,   "Air"],
